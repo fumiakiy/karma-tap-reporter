@@ -14,7 +14,7 @@
   ],
   "author": "Fumiaki Yoshimatsu <fumiakiy@gmail.com>",
   "peerDependencies": {
-    "karma": ">0.10"
+    "karma": ">=0.10.9"
   },
   "license": "MIT"
 }
