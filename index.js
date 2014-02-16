@@ -1,6 +1,5 @@
-var TAPReporter = function(baseReporterDecorator, logger) {
+var TAPReporter = function(baseReporterDecorator) {
   baseReporterDecorator(this);
-  console.log(logger);
 
   var numbers = new Object();
   this.onRunStart = function(browsers) {
