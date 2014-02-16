@@ -1,4 +1,30 @@
-karma-tap-reporter
-==================
+# karma-tap-reporter
 
-Karma plugin to report test results in TAP.
+> VERY simple Karma plugin to report test results in TAP.
+
+## Installation
+
+`package.json`
+```json
+{
+  "devDependencies": {
+    "karma": "~0.10",
+    "karma-tap-reporter": "~0.1"
+  }
+}
+```
+
+## Configuration
+```js
+// karma.conf.js
+module.exports = function(config) {
+  config.set({
+    reporters: ['tap']
+  });
+};
+```
+----
+
+For more information on Karma see the [homepage].
+
+[homepage]: http://karma-runner.github.com

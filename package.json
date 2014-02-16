@@ -1,0 +1,20 @@
+{
+  "name": "karma-tap-reporter",
+  "version": "0.0.1",
+  "description": "A Karma plugin. Report results in TAP protocol.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fumiakiy/karma-tap-reporter.git"
+  },
+  "keywords": [
+    "karma-plugin",
+    "karma-reporter",
+    "tap"
+  ],
+  "author": "Fumiaki Yoshimatsu <fumiakiy@gmail.com>",
+  "peerDependencies": {
+    "karma": ">0.10"
+  },
+  "license": "MIT"
+}
