@@ -1,23 +1,25 @@
 var TAPReporter = function(baseReporterDecorator) {
   baseReporterDecorator(this);
 
-  var numbers = new Object();
-  this.onRunStart = function(browsers) {
-    browsers.forEach(function(browser, id) {
-      numbers[browser.id] = 0;
-    });
+  var numbers;
+  this.onRunStart = function() {
+    numbers = new Object();
+  };
+
+   this.onBrowserStart = function(browser) {
+     numbers[browser.id] = 0;
   };
 
   this.specSuccess = function(browser, result) {
-    this.write("ok " + ++numbers[browser.id] + " " + result.description + "\n");
+    this.write("ok " + ++numbers[browser.id] + " " + result.suite.join(' ').replace(/\./g, '_') + " " + result.description + "\n");
   };
 
   this.specFailure = function(browser, result) {
-    this.write("not ok " + ++numbers[browser.id] + " " + result.description + "\n");
+    this.write("not ok " + ++numbers[browser.id] + " " + result.suite.join(' ').replace(/\./g, '_') + " " + result.description + "\n");
   };
 
   this.specSkipped = function(browser, result) {
-    this.write("ok " + ++numbers[browser.id] + " " + "# skip " + result.description + "\n");
+    this.write("ok " + ++numbers[browser.id] + " " + "# skip " + result.suite.join(' ').replace(/\./g, '_') + " " + result.description + "\n");
   };
 
   this.onRunComplete = function(browsers, results) {
