@@ -1,6 +1,6 @@
 {
   "name": "karma-tap-reporter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Karma plugin. Report results in TAP protocol.",
   "main": "index.js",
   "repository": {
@@ -12,7 +12,10 @@
     "karma-reporter",
     "tap"
   ],
-  "author": "Fumiaki Yoshimatsu <fumiakiy@gmail.com>",
+  "author": "Fumiaki Yoshimatsu <fumiakiy@gmail.com> (http://fumiakiy.tumblr.com)",
+  "contributors": [
+    {"name": "lgersman", "url": "http://www.orangevolt.com", "email": "lars.gersmann@gmail.com"}
+  ],
   "peerDependencies": {
     "karma": ">=0.10.9"
   },
