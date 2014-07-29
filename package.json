@@ -14,10 +14,16 @@
   ],
   "author": "Fumiaki Yoshimatsu <fumiakiy@gmail.com> (http://fumiakiy.tumblr.com)",
   "contributors": [
-    {"name": "lgersman", "url": "http://www.orangevolt.com", "email": "lars.gersmann@gmail.com"}
+    "lgersman <lars.gersmann@gmail.com> (http://www.orangevolt.com)"
   ],
   "peerDependencies": {
     "karma": ">=0.10.9"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fumiakiy/karma-tap-reporter/issues"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }
