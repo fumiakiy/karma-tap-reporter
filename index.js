@@ -1,5 +1,6 @@
-var TAPReporter = function(baseReporterDecorator, config) {
+var TAPReporter = function(baseReporterDecorator, config, logger) {
   var tapReporterConfig = config.tapReporter || {},
+    log = logger.create('karma-tap-reporter'),
     _this = this,
     output = '',
     path = require('path'),
@@ -49,6 +50,7 @@ var TAPReporter = function(baseReporterDecorator, config) {
     write("1.." + total + "\n");
 
     if (outputFile) {
+      log.info('writing report to file: ' + outputFile);
       fs.writeFileSync(outputFile, output);
     }
   };
