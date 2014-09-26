@@ -23,6 +23,15 @@ module.exports = function(config) {
   });
 };
 ```
+
+Optionally you can save report to a file
+```js
+reporters: ['tap'],
+
+tapReporter: {
+  outputFile: './unit.tap'
+}
+```
 ----
 
 For more information on Karma see the [homepage].
