@@ -1,6 +1,6 @@
 var TAPReporter = function(baseReporterDecorator, config, logger) {
   var tapReporterConfig = config.tapReporter || {},
-    stdout = typeof reporterConfig.stdout !== 'undefined' ? reporterConfig.stdout : true,
+    stdout = typeof tapReporterConfig.stdout !== 'undefined' ? tapReporterConfig.stdout : true,
     log = logger.create('karma-tap-reporter'),
     _this = this,
     output = '',
