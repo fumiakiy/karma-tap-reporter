@@ -1,4 +1,4 @@
-var TAPReporter = function(baseReporterDecorator, config, logger) {
+var TAPReporter = function(baseReporterDecorator, config, logger, helper) {
   var tapReporterConfig = config.tapReporter || {},
     log = logger.create('karma-tap-reporter'),
     _this = this,
@@ -49,14 +49,19 @@ var TAPReporter = function(baseReporterDecorator, config, logger) {
     });
     write("1.." + total + "\n");
 
-    if (outputFile) {
-      log.info('writing report to file: ' + outputFile);
-      fs.writeFileSync(outputFile, output);
-    }
+  if (outputFile) {
+			helper.mkdirIfNotExists(path.dirname(outputFile), function (err) {
+				if (err) {
+					return log.error('error writing report to file: ' + err);
+				}
+				log.info('writing report to file: ' + outputFile);
+				fs.writeFileSync(outputFile, output);
+			});
+		}
   };
 };
 
-TAPReporter.$inject = ['baseReporterDecorator', 'config', 'logger'];
+TAPReporter.$inject = ['baseReporterDecorator', 'config', 'logger', 'helper'];
 
 module.exports = {
   'reporter:tap': ['type', TAPReporter]
