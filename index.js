@@ -5,6 +5,7 @@ var TAPReporter = function(baseReporterDecorator, config, logger, helper) {
     output = '',
     path = require('path'),
     fs = require('fs'),
+    EOL = require('os').EOL,
     numbers, outputFile;
 
   /**
@@ -31,15 +32,15 @@ var TAPReporter = function(baseReporterDecorator, config, logger, helper) {
   };
 
   this.specSuccess = function(browser, result) {
-    write("ok " + ++numbers[browser.id] + " " + result.suite.join(' ').replace(/\./g, '_') + " " + result.description + "\n");
+    write("ok " + ++numbers[browser.id] + " " + result.suite.join(' ').replace(/\./g, '_') + " " + result.description + EOL);
   };
 
   this.specFailure = function(browser, result) {
-    write("not ok " + ++numbers[browser.id] + " " + result.suite.join(' ').replace(/\./g, '_') + " " + result.description + "\n");
+    write("not ok " + ++numbers[browser.id] + " " + result.suite.join(' ').replace(/\./g, '_') + " " + result.description + EOL);
   };
 
   this.specSkipped = function(browser, result) {
-    write("ok " + ++numbers[browser.id] + " " + "# skip " + result.suite.join(' ').replace(/\./g, '_') + " " + result.description + "\n");
+    write("ok " + ++numbers[browser.id] + " " + "# skip " + result.suite.join(' ').replace(/\./g, '_') + " " + result.description + EOL);
   };
 
   this.onRunComplete = function(browsers, results) {
@@ -47,7 +48,7 @@ var TAPReporter = function(baseReporterDecorator, config, logger, helper) {
     browsers.forEach(function(browser, id) {
       total += browser.lastResult.total;
     });
-    write("1.." + total + "\n");
+    write("1.." + total + EOL);
 
   if (outputFile) {
 			helper.mkdirIfNotExists(path.dirname(outputFile), function (err) {
