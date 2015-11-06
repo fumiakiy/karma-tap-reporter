@@ -36,7 +36,7 @@ var TAPReporter = function(baseReporterDecorator, config, logger, helper) {
   };
 
   this.specFailure = function(browser, result) {
-    write("not ok " + ++numbers[browser.id] + " " + result.suite.join(' ').replace(/\./g, '_') + " " + result.description + "\n" + "log: " + result.log);
+    write("not ok " + ++numbers[browser.id] + " " + result.suite.join(' ').replace(/\./g, '_') + " " + result.description + "\n" + "log: " + result.log + "\n");
     failures++;
   };
 
