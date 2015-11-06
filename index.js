@@ -5,6 +5,7 @@ var TAPReporter = function(baseReporterDecorator, config, logger, helper) {
     output = '',
     path = require('path'),
     fs = require('fs'),
+    failures = 0,
     numbers, outputFile;
 
   /**
@@ -35,7 +36,8 @@ var TAPReporter = function(baseReporterDecorator, config, logger, helper) {
   };
 
   this.specFailure = function(browser, result) {
-    write("not ok " + ++numbers[browser.id] + " " + result.suite.join(' ').replace(/\./g, '_') + " " + result.description + "\n");
+    write("not ok " + ++numbers[browser.id] + " " + result.suite.join(' ').replace(/\./g, '_') + " " + result.description + "\n" + "\tlog: " + result.log + "\n");
+    failures++;
   };
 
   this.specSkipped = function(browser, result) {
@@ -47,7 +49,7 @@ var TAPReporter = function(baseReporterDecorator, config, logger, helper) {
     browsers.forEach(function(browser, id) {
       total += browser.lastResult.total;
     });
-    write("1.." + total + "\n");
+    write( failures + " failed of " + total + "\n");
 
   if (outputFile) {
 			helper.mkdirIfNotExists(path.dirname(outputFile), function (err) {
