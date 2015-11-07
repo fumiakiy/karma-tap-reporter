@@ -1,6 +1,6 @@
 {
   "name": "karma-tap-reporter",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A Karma plugin. Report results in TAP protocol.",
   "main": "index.js",
   "repository": {
@@ -16,7 +16,8 @@
   "contributors": [
     "lgersman <lars.gersmann@gmail.com> (http://www.orangevolt.com)",
     "Dmitrii Abramov",
-    "chevalric <> (https://github.com/chevalric)"
+    "chevalric <> (https://github.com/chevalric)",
+    "farrago"
   ],
   "peerDependencies": {
     "karma": ">=0.10.9"
