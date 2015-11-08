@@ -24,12 +24,13 @@ module.exports = function(config) {
 };
 ```
 
-Optionally you can save report to a file
+Optionally you can save report to a file and turn off output to the console.
 ```js
 reporters: ['tap'],
 
 tapReporter: {
-  outputFile: './unit.tap'
+  outputFile: './unit.tap',
+  disableStdout: true
 }
 ```
 ----
