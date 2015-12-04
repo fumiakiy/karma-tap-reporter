@@ -9,7 +9,7 @@
 {
   "devDependencies": {
     "karma": "~0.10",
-    "karma-tap-reporter": "~0.0.5"
+    "karma-tap-reporter": "~0.0.6"
   }
 }
 ```
