@@ -1,5 +1,6 @@
 var TAPReporter = function(baseReporterDecorator, config, logger, helper) {
   var tapReporterConfig = config.tapReporter || {},
+    disableStdout = !!tapReporterConfig.disableStdout,
     log = logger.create('karma-tap-reporter'),
     _this = this,
     output = '',
@@ -14,7 +15,9 @@ var TAPReporter = function(baseReporterDecorator, config, logger, helper) {
    */
   function write(data) {
     output = output + data;
-    _this.write(data);
+    if (!disableStdout) {
+      _this.write(data);
+    }
   }
 
   if (tapReporterConfig.outputFile) {
