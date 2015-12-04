@@ -18,7 +18,7 @@
     "Dmitrii Abramov",
     "chevalric <> (https://github.com/chevalric)",
     "farrago",
-    "leahciMic" <> (https://github.com/leahciMic)"
+    "leahciMic <> (https://github.com/leahciMic)"
   ],
   "peerDependencies": {
     "karma": ">=0.10.9"
