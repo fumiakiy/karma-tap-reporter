@@ -1,6 +1,6 @@
 {
   "name": "karma-tap-reporter",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "description": "A Karma plugin. Report results in TAP protocol.",
   "main": "index.js",
   "repository": {
