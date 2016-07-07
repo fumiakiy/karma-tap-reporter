@@ -1,6 +1,6 @@
 {
   "name": "karma-tap-reporter",
-  "version": "0.0.6",
+  "version": "2.0.0",
   "description": "A Karma plugin. Report results in TAP protocol.",
   "main": "index.js",
   "repository": {
@@ -8,8 +8,10 @@
     "url": "git://github.com/fumiakiy/karma-tap-reporter.git"
   },
   "keywords": [
+    "karma",
     "karma-plugin",
     "karma-reporter",
+    "tape",
     "tap"
   ],
   "author": "Fumiaki Yoshimatsu <fumiakiy@gmail.com> (http://fumiakiy.tumblr.com)",
@@ -18,10 +20,11 @@
     "Dmitrii Abramov",
     "chevalric <> (https://github.com/chevalric)",
     "farrago",
-    "leahciMic <> (https://github.com/leahciMic)"
+    "leahciMic <> (https://github.com/leahciMic)",
+    "bySabi Files <> (https://github.com/bySabi)"
   ],
   "peerDependencies": {
-    "karma": ">=0.10.9"
+    "karma": "1.x.x"
   },
   "license": "MIT",
   "bugs": {
