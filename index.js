@@ -3,7 +3,7 @@ var TAPReporter = function(baseReporterDecorator, config, logger, helper) {
     disableStdout = !!tapReporterConfig.disableStdout,
     log = logger.create('karma-tap-reporter'),
     _this = this,
-    output = '',
+    output,
     path = require('path'),
     fs = require('fs'),
     EOL = require('os').EOL,
@@ -37,6 +37,8 @@ var TAPReporter = function(baseReporterDecorator, config, logger, helper) {
 
   this.onRunStart = function() {
     numbers = new Object();
+    output = '';
+    currentSuite = '';
     write('TAP version 13' + EOL);
   };
 
