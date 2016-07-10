@@ -8,8 +8,8 @@
 ```json
 {
   "devDependencies": {
-    "karma": "~0.10",
-    "karma-tap-reporter": "~0.0.6"
+    "karma": "1.x.x",
+    "karma-tap-reporter": "2.x.x"
   }
 }
 ```
@@ -34,6 +34,9 @@ tapReporter: {
 }
 ```
 ----
+
+## TAP Protocol
+Support TAP Protocol version `13`
 
 For more information on Karma see the [homepage].
 
